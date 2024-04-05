@@ -8,6 +8,6 @@ public class main
     public static void main(String[] args)
     {
         LoginView loginView = new LoginView();
-        LoginController loginControlledr = new LoginController(loginView);
+        LoginController loginController = new LoginController(loginView);
     }
 }
