@@ -2,6 +2,7 @@ package Controllers;
 
 import View.*;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,7 +18,7 @@ public class RegisterController
             // code for the register button click event
             public void actionPerformed(ActionEvent e)
             {
-
+                JOptionPane.showMessageDialog(null, "Registered Successfully");
             }
         });
 

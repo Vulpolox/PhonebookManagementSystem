@@ -1,8 +1,7 @@
 import Controllers.LoginController;
 import View.*;
-import Controllers.*;
 
-public class main
+public class Main
 {
     public static void main(String[] args)
     {

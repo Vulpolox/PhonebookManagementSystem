@@ -26,5 +26,13 @@ public class LoginController
 
 
         });
+
+        loginView.addLoginButtonListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+
+            }
+        });
     }
 }
