@@ -49,4 +49,17 @@ public class RegisterView extends JFrame
         cancelButton.addActionListener(listener);
     }
 
+    public void addRegisterButtonListener(ActionListener listener)
+    {
+        registerButton.addActionListener(listener);
+    }
+
+    public String getUsername() { return this.usernameField.getText(); }
+    public String getPassword() { return new String(this.passwordField.getText()); }
+
+    public String getConfirmPassword()
+    {
+        return new String(confirmPasswordField.getText());
+    }
+
 }

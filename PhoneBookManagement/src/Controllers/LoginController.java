@@ -11,14 +11,20 @@ public class LoginController
     public LoginController(LoginView loginView)
     {
         this.loginView = loginView;
-        loginView.addLoginButtonListener(new ActionListener()
+        loginView.addRegisterButtonListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
             {
+                // create a RegisterView instance and bind it to controller and set visible
                 RegisterView rv = new RegisterView();
+                RegisterController registerController = new RegisterController(rv);
                 rv.setVisible(true);
+
+                // disable the LoginView instance
                 loginView.setVisible(false);
             }
+
+
         });
     }
 }

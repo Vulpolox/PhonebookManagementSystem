@@ -43,4 +43,9 @@ public class LoginView extends JFrame
     {
         loginButton.addActionListener(actionListener);
     }
+
+    public void addRegisterButtonListener(ActionListener actionListener)
+    {
+        registerButton.addActionListener(actionListener);
+    }
 }
