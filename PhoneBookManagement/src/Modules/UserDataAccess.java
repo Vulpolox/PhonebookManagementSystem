@@ -195,6 +195,9 @@ public class UserDataAccess
             String query = "SELECT * FROM tb_contacts WHERE user = ?";
             PreparedStatement stm = connect.prepareStatement(query);
 
+            // set fields for PreparedStatement
+            stm.setInt(1, getUserId(user));
+
             // create and manipulate ResultSet to get all contacts
             ResultSet rs = stm.executeQuery();
             while (rs.next())

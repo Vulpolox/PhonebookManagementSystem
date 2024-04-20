@@ -52,7 +52,12 @@ public class LoginController
 
                 // if everything is correct
                 else
-                    JOptionPane.showMessageDialog(null, "Success! TODO");
+                {
+                    ContactsView cv = new ContactsView(user);
+                    cv.setVisible(true);
+
+                    loginView.setVisible(false);
+                }
 
             }
         });
