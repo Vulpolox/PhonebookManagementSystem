@@ -69,11 +69,7 @@ public class RegisterView extends JFrame
     }
 
     public String getUsername() { return this.usernameField.getText(); }
-    public String getPassword() { return new String(this.passwordField.getText()); }
-
-    public String getConfirmPassword()
-    {
-        return new String(confirmPasswordField.getText());
-    }
+    public String getPassword() { return this.passwordField.getText(); }
+    public String getConfirmPassword() { return confirmPasswordField.getText(); }
 
 }

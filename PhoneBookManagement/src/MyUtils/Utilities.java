@@ -10,10 +10,12 @@ public class Utilities
     private static final String PASSWORD = "Password123";
 
     public static Connection getConnection() throws SQLException
-    {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
-    }
+    { return DriverManager.getConnection(URL, USER, PASSWORD); }
 
+    /**
+     * pre  -- takes a String password
+     * post -- returns a hashed password
+     */
     public static String hashPassword(String password) {
         try
         {
