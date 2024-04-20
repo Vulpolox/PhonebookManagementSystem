@@ -35,7 +35,7 @@ public class RegisterController
 
                 // if the passwords do not match, tell the user
                 else if (!Utilities.isPasswordMatching(registerView.getPassword(),
-                                                 registerView.getConfirmPassword()))
+                                                       registerView.getConfirmPassword()))
                     JOptionPane.showMessageDialog(null, "Passwords do not match");
 
                 // if everything is correct, register the user into the database

@@ -1,7 +1,9 @@
 package View;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 import Modules.*;
 
@@ -14,11 +16,15 @@ public class ContactsView extends JFrame
 
     // instance data
     private Contact selectedContact = null;
+    private User user = null;
 
 
     // constructor
     public ContactsView(User user)
     {
+        // initialize the user
+        this.user = user;
+
         // JFrame setup
         setTitle("Contacts");
         setSize(300, 200);
@@ -28,6 +34,7 @@ public class ContactsView extends JFrame
         UserDataAccess uda = new UserDataAccess();
         Contact[] contacts = uda.getContacts(user);
         this.contactsList = new JList<>(contacts);
+        this.contactsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // initialize JButtons
         editContactButton = new JButton("Edit Contact");
@@ -56,7 +63,6 @@ public class ContactsView extends JFrame
         logoutButton.setBorderPainted(false);
 
         // initialize buttonPanel
-
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
         buttonPanel.add(editContactButton);
@@ -74,4 +80,24 @@ public class ContactsView extends JFrame
         this.add(contentPanel);
         this.setLocationRelativeTo(null);
     }
+
+    // methods for adding ActionListeners to JButtons
+    public void addEditButtonListener(ActionListener listener)
+    { editContactButton.addActionListener(listener); }
+    public void addAddContactButtonListener(ActionListener listener)
+    { addContactButton.addActionListener(listener); }
+    public void addCreateCSVButtonListener(ActionListener listener)
+    { createCSVButton.addActionListener(listener); }
+    public void addLogoutButtonListener(ActionListener listener)
+    { logoutButton.addActionListener(listener); }
+
+    // method for adding ActionListener to JList
+    public void addContactListSelectionListener(ListSelectionListener listener)
+    { contactsList.addListSelectionListener(listener); }
+
+    // accessors and mutators
+    public Contact getSelectedContact() { return selectedContact; }
+    public void setSelectedContact(Contact selectedContact) { this.selectedContact = selectedContact; }
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
 }
