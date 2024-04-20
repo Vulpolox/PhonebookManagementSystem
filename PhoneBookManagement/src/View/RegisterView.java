@@ -1,15 +1,15 @@
 package View;
 
 import javax.swing.*;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class RegisterView extends JFrame
 {
     // controls or components as needed
-    private JTextField usernameField;
-    private JPasswordField passwordField, confirmPasswordField;
-    private JButton registerButton, cancelButton;
+    private final JTextField usernameField;
+    private final JPasswordField passwordField, confirmPasswordField;
+    private final JButton registerButton, cancelButton;
 
     public RegisterView()
     {
@@ -22,26 +22,40 @@ public class RegisterView extends JFrame
         passwordField = new JPasswordField(10);
         confirmPasswordField = new JPasswordField(10);
         registerButton = new JButton("Register");
-        cancelButton = new JButton("Cancel");
+        cancelButton = new JButton("Go Back");
 
         // create a panel and add components
             JPanel panel = new JPanel(new GridLayout(5, 2));
 
             // add labels and fields
-            panel.add(new JLabel("Username: "));
+            panel.add(new JLabel("  Username: "));
             panel.add(usernameField);
-            panel.add(new JLabel("Password: "));
+            panel.add(new JLabel("  Password: "));
             panel.add(passwordField);
-            panel.add(new JLabel("Confirm Password: "));
+            panel.add(new JLabel("  Confirm Password: "));
             panel.add(confirmPasswordField);
 
-            // add buttons
+            // colorize and add the buttons
+            Color c1 = Color.blue;
+            Color c2 = new Color(111, 0, 255);
+
+            cancelButton.setForeground(Color.white);
+            cancelButton.setBackground(c1);
+            registerButton.setForeground(Color.white);
+            registerButton.setBackground(c2);
+
+            registerButton.setOpaque(true);
+            cancelButton.setOpaque(true);
+
+            cancelButton.setBorderPainted(false);
+            registerButton.setBorderPainted(false);
+
             panel.add(registerButton);
             panel.add(cancelButton);
 
         // add panel to the frame and set its visibility
         add(panel);
-        setVisible(true);
+        setLocationRelativeTo(null);
     }
 
     public void addCancelButtonListener(ActionListener listener)
