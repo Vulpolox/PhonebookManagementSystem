@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -96,7 +97,7 @@ public class ContactsView extends JFrame
     { contactsList.addListSelectionListener(listener); }
 
     // accessors and mutators
-    public Contact getSelectedContact() { return selectedContact; }
+    public Contact getSelectedContact() { return contactsList.getSelectedValue(); }
     public void setSelectedContact(Contact selectedContact) { this.selectedContact = selectedContact; }
     public User getUser() { return user; }
     public void setUser(User user) { this.user = user; }

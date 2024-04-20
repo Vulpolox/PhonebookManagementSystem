@@ -53,10 +53,11 @@ public class LoginController
                 // if everything is correct
                 else
                 {
-                    ContactsView cv = new ContactsView(user);
-                    cv.setVisible(true);
-
                     loginView.setVisible(false);
+
+                    ContactsView cv = new ContactsView(user);
+                    ContactsController contactsController = new ContactsController(cv);
+                    cv.setVisible(true);
                 }
 
             }

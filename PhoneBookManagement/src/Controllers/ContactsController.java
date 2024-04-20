@@ -25,7 +25,11 @@ public class ContactsController
             // code for addContactButton button press
             public void actionPerformed(ActionEvent e)
             {
+                contactsView.setVisible(false);
 
+                AddContactView acv = new AddContactView(contactsView.getUser());
+                AddContactController addContactController = new AddContactController(acv);
+                acv.setVisible(true);
             }
         });
 
@@ -43,7 +47,17 @@ public class ContactsController
             // code for editContactButton button press
             public void actionPerformed(ActionEvent e)
             {
+                if (contactsView.getSelectedContact() == null)
+                    JOptionPane.showMessageDialog(null, "Please select contact to edit");
+                else
+                {
+                    Contact contactToEdit = contactsView.getSelectedContact();
 
+                    contactsView.setVisible(false);
+                    EditContactView ecv = new EditContactView(contactsView.getUser(), contactToEdit);
+                    EditContactController editContactController = new EditContactController(ecv);
+                    ecv.setVisible(true);
+                }
             }
         });
 
@@ -52,7 +66,15 @@ public class ContactsController
             // code for logoutButton button press
             public void actionPerformed(ActionEvent e)
             {
+                // set the contactsView to be invisible
+                contactsView.setVisible(false);
 
+                JOptionPane.showMessageDialog(null, "Logged out");
+
+                // re-enable the login view
+                LoginView lv = new LoginView();
+                LoginController loginController = new LoginController(lv);
+                lv.setVisible(true);
             }
         });
 
@@ -60,7 +82,10 @@ public class ContactsController
         {
             public void valueChanged(ListSelectionEvent e)
             {
-                
+                if (!e.getValueIsAdjusting())
+                {
+                    contactsView.setSelectedContact(contactsView.getSelectedContact());
+                }
             }
         });
     }
