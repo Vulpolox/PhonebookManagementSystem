@@ -3,6 +3,7 @@ package Controllers;
 import View.*;
 import Modules.*;
 import MyUtils.*;
+import java.io.*;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -38,7 +39,22 @@ public class ContactsController
             // code for createCSVButton button press
             public void actionPerformed(ActionEvent e)
             {
+                String outputFileName = "contacts.csv";
 
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName)))
+                {
+                    writer.write("firstname,lastname,phonenumber\n");
+
+                    for (Contact contact : contactsView.getContactArray())
+                    {
+                        writer.write(String.format("%s,%s,%s%n", contact.getFirstname(),
+                                                               contact.getLastname(),
+                                                               contact.getPhoneNumber()));
+                    }
+                }
+                catch (IOException err) { err.printStackTrace(); }
+
+                JOptionPane.showMessageDialog(null, "Wrote contact information to \"contacts.csv\"");
             }
         });
 

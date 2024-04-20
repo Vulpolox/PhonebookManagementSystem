@@ -1,6 +1,2 @@
-package Controllers;
-
-public class UpdateContactsController
-{
-
+package Controllers;public class UpdateContactsController {
 }

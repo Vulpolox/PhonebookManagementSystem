@@ -101,4 +101,9 @@ public class ContactsView extends JFrame
     public void setSelectedContact(Contact selectedContact) { this.selectedContact = selectedContact; }
     public User getUser() { return user; }
     public void setUser(User user) { this.user = user; }
+    public Contact[] getContactArray()
+    {
+        UserDataAccess uda = new UserDataAccess();
+        return uda.getContacts(user);
+    }
 }
