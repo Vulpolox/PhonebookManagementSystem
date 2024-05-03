@@ -68,6 +68,13 @@
 
 ![screenshot](https://github.com/Vulpolox/PhonebookManagementSystem/blob/main/Screenshots/FeatureScreenshots/CSVWriting.png)
 
+## Video
+
+## Download Link
+
+[Zip file with source code and .jar](https://drive.google.com/drive/folders/1Sd2CwV23NgdhE1F5OoNGNZvsRhZ2Ajye?usp=sharing) \
+(alternatively, you can just clone this repo as it is the same thing)
+
 ## Source Code
 
 #### Views
