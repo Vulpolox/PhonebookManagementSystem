@@ -38,8 +38,13 @@
   - loginButton -- if any of the corresponding JTextFields are empty or if the entered username and password are not associated with a user currently in the database, display the appropriate error message through a JOptionPane; otherwise, fetch the id associated with the entered username and password through a UserDataAccess instance and use it to create an array of Contacts associated with it (also through a UDA instance). The array is then stored as instance data in the ContactsView and is used to both construct the JList every time it is loaded in and to preserve data through search operations.
   - addContactButton -- if any of the corresponding JTextFields are empty, displays an error message through a JOptionPane; otherwise, creates a new Contact object using the data from the fields and the current User's id and, through a UserDataAccess object, adds it to the database
   - editContactButton -- if a Contact is not selected from the JList, displays an error message through a JOptionPane; otherwise, loads the EditContactView with its JTextFields auto-populated with the data from the selected Contact.
-  - updateContactButton -- exists in EditContactView.  If any of the corresponding JTextFields are emtpy, displays an error message through a JOptionPane; otherwise, it deletes the selected Contact from the database and adds the updated one before reloading the ContactsView
+  - updateContactButton -- exists in EditContactView.  If any of the corresponding JTextFields are emtpy, displays an error message through a JOptionPane; otherwise, it deletes the selected Contact from the database and creates and adds an updated one with the data from the text fields to the database before reloading the ContactsView
   - deleteContactButton -- exists in EditContactView.  When pressed, it removes the currently selected Contact from the database before reloading the ContactsView
+  - contactsList -- the JList that is displayed in the ContactsView containing all Contacts associated with the current User.  Contacts are sorted alphabetically by firstname on JList initialization through a class that implements the Comparator interface alongside the Arrays.sort function from the java.utils library
+
+## Screenshots
+
+
 
 ## Source Code
 
