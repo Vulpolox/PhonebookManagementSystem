@@ -1,3 +1,5 @@
+package App;
+
 import Controllers.LoginController;
 import View.*;
 

@@ -45,7 +45,7 @@ public class ContactsController
                 {
                     writer.write("firstname,lastname,phonenumber\n");
 
-                    for (Contact contact : contactsView.getContactArray())
+                    for (Contact contact : contactsView.getUnderlyingData())
                     {
                         writer.write(String.format("%s,%s,%s%n", contact.getFirstname(),
                                                                contact.getLastname(),
@@ -94,8 +94,20 @@ public class ContactsController
             }
         });
 
+        contactsView.addSearchButtonListener(new ActionListener()
+        {
+            // code for searchButton press
+            public void actionPerformed(ActionEvent e)
+            {
+                Utilities.filterContactList(contactsView.getContactListModel(),
+                                            contactsView.getUnderlyingData(),
+                                            contactsView.getSearchFilter());
+            }
+        });
+
         contactsView.addContactListSelectionListener(new ListSelectionListener()
         {
+            // code for list selection event
             public void valueChanged(ListSelectionEvent e)
             {
                 if (!e.getValueIsAdjusting())
