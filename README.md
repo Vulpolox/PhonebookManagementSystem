@@ -44,9 +44,40 @@
 
 ## Screenshots
 
+#### Registering and Logging in
 
+![screenshot](https://github.com/Vulpolox/PhonebookManagementSystem/blob/main/Screenshots/FeatureScreenshots/LoginAndRegister.png)
 
-## Source Code
+#### Adding New Contacts
+
+![screenshot](https://github.com/Vulpolox/PhonebookManagementSystem/blob/main/Screenshots/FeatureScreenshots/AddingContacts.png)
+
+#### Searching Through Contacts
+
+![screenshot](https://github.com/Vulpolox/PhonebookManagementSystem/blob/main/Screenshots/FeatureScreenshots/Search.png)
+
+#### Updating Contacts
+
+![screenshot](https://github.com/Vulpolox/PhonebookManagementSystem/blob/main/Screenshots/FeatureScreenshots/UpdateContact.png)
+
+#### Removing Contacts
+
+![screenshot](https://github.com/Vulpolox/PhonebookManagementSystem/blob/main/Screenshots/FeatureScreenshots/RemoveContact.png)
+
+#### CSV Writing
+
+![screenshot](https://github.com/Vulpolox/PhonebookManagementSystem/blob/main/Screenshots/FeatureScreenshots/CSVWriting.png)
+
+## Video
+
+[Click Here](https://youtu.be/GYLLY9s-2yA)
+
+## Download Link
+
+[Zip file with source code and .jar](https://drive.google.com/drive/folders/1Sd2CwV23NgdhE1F5OoNGNZvsRhZ2Ajye?usp=sharing) \
+(alternatively, you can just clone this repo as it is the same thing)
+
+## Source Code Shortcuts (for easier grading)
 
 #### Views
 
